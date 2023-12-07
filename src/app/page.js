@@ -1,9 +1,10 @@
-import Main from 'src/components/Main.jsx';
+import Main from "src/components/Main.jsx";
+
 
 export default function Home() {
   return (
     <main>
-    <Main />
+      <Main />
     </main>
-  )
+  );
 }
