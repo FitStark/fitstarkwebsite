@@ -1,5 +1,4 @@
 "use client";
-import Airtable from "airtable";
 import { useRef, useState } from "react";
 
 export default function Form() {
@@ -11,13 +10,12 @@ export default function Form() {
 
   const submit = async (e) => {
     e.preventDefault();
-    const data = new FormData(form.current)
-
+    const data = new FormData(form.current);
     const res = await fetch("/api/waitlist", {
       method: "POST",
       body: data,
-    })
-    const {name, email} = await res.json()
+    });
+    setHasSubmitted(true);
   };
 
   if (hasSubmitted) {
@@ -41,6 +39,7 @@ export default function Form() {
           className="p-3 m-2 box-border border-none rounded-lg text-lg flex-1 bg-[#232323] text-white mr-2"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          autoComplete="name"
         />
         <input
           type="email"
@@ -50,15 +49,16 @@ export default function Form() {
           className="p-3 m-2 box-border border-none rounded-lg text-lg flex-1 bg-[#232323] text-white mr-2"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          autoComplete="email"
         />
         {error ? <div className="text-red-500">{error}</div> : null}
+        <button
+          type="submit"
+          className="m-2 p-3 box-border border-none rounded-lg text-lg flex-none bg-[#95BF1D] hover:bg-[#6e862a] text-white"
+        >
+          Join Waitlist
+        </button>
       </form>
-      <button
-        type="submit"
-        className="m-2 p-3 box-border border-none rounded-lg text-lg flex-none bg-[#7476ED] text-white"
-      >
-        Join Waitlist
-      </button>
     </>
   );
 }
