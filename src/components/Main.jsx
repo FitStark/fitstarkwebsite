@@ -13,7 +13,7 @@ export default function Main() {
 function LeftSide() {
   return (
     <div className="flex-1 m-auto p-8 md:flex-[50%]">
-      <Image className="py-6" width="154" height="27" src="/christmasLogo.png" alt="logo" />
+      <Image className="py-6" width="250" height="30" src="/christmasLogo.png" alt="logo" />
       <h1 className="text-4xl text-white">
         FitStark App is
         <br />
