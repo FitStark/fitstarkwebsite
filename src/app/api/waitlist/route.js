@@ -1,4 +1,5 @@
 import Airtable from "airtable";
+import { error } from "console";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -13,8 +14,8 @@ export async function POST(req) {
     ]);
 
     console.log(records);
-  } catch {
-    console.log(records);
+  } catch (error) {
+    console.log(error);
   }
   return NextResponse.json({ ok: true }, { status: 200 });
 }
