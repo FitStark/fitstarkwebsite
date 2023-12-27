@@ -1,0 +1,79 @@
+.background{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/bg.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    padding-top: 4em;
+}
+
+.navlinks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.navlinks > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.navlinks > p {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    margin-top: 3em;
+}
+
+.main-content > h1 {
+    font-size: 50px;
+    font-weight: bolder;
+    width: 50%;
+}
+
+#p1{
+    color: #95bf1d;
+    margin-top: 1em;
+}
+
+#p2{
+    margin-top: 1em;
+    width: 45%;
+}
+
+#p2 > span {
+    color: #95bf1d;
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #95bf1d;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-top: 2em;
+    font-size: 12px;
+    padding: 5px 2em;
+}
