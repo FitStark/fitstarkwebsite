@@ -23,29 +23,30 @@ export default function Form() {
     return (
       <div className="p-8">
 
-      <div style={{color: 'black', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', fontWeight: 'bold', fontSize: '20px'}}>
-
-        <Image src='/images/Frame (1).png' alt='' width='50' height='50' />
-        <p>Your interest has been successfully received!</p>
-        <p>You will be notified duly!</p>
-        <p>Anticipate our launch in 2024!</p>
-
-        <div className='navlinks' style={{width: '30%', marginTop: '1em'}}>
-
-          <div>
-
-            <Image src='/images/X svg.png' alt='' width='30' height='30' />
-            <Image src='/images/Facebook svg.png' alt='' width='30' height='30' />
-            <Image src='/images/Instagram svg.png' alt='' width='30' height='30' />
-            <Image src='/images/Linkedin svg.png' alt='' width='30' height='30' />
-
+        <div className="form-submit">
+      
+          <Image src='/images/Frame (1).png' alt='' width='50' height='50' />
+          <p>Your interest has been successfully received!</p>
+          <p>You will be notified duly!</p>
+          <p>Anticipate our launch in 2024!</p>
+      
+          <div className='navlinksa' style={{width: '30%', marginTop: '1em'}}>
+      
+            <div>
+      
+              <Image src='/images/X svg.png' alt='' width='30' height='30' />
+              <Image src='/images/Facebook svg.png' alt='' width='30' height='30' />
+              <Image src='/images/Instagram svg.png' alt='' width='30' height='30' />
+              <Image src='/images/Linkedin svg.png' alt='' width='30' height='30' />
+      
+            </div>
+      
+            <p style={{color: 'black', fontSize: '15px'}}>connect with Us</p>
+      
           </div>
-
-          <p style={{color: 'black', fontSize: '15px'}}>connect with Us</p>
-
+          
         </div>
-        
-      </div>
+
       </div>
     );
   }
@@ -73,6 +74,7 @@ export default function Form() {
           onChange={(e) => setUserType(e.target.value)}
           autoComplete="userType" style={{color: 'black'}}
         >
+          <option value="fitstar" style={{color: 'black'}} disabled>User type</option>
           <option value="fitstar" style={{color: 'black'}}>FitStar</option>
           <option value="fitguide" style={{color: 'black'}}>FitGuide</option>
         </select>

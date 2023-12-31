@@ -6,7 +6,10 @@ import '../../styles/background.css'
 import Link from 'next/link'
 
 export default function Main() {
+
   const [showForm, setShowForm] = useState(false);
+  
+  const [showSidebar, setShowSidebar] = useState(false);
 
   const handleJoinWaitlistClick = () => {
     setShowForm(true);
@@ -14,6 +17,14 @@ export default function Main() {
 
   const handleCloseFormClick = () => {
     setShowForm(false);
+  };
+
+  const handleshowSidebar = () => {
+    setShowSidebar(true);
+  };
+
+  const handleCloseSidebar = () => {
+    setShowSidebar(false);
   };
 
   return (
@@ -26,7 +37,7 @@ export default function Main() {
             <Image src='/images/fitstarklogo.png' alt='' width='150' height='50' />
           </Link>
 
-          <Image src='/images/Frame (2).png' alt='' width='30' height='50' id="hamburger" />
+          <Image src='/images/Frame (2).png' alt='' width='30' height='50' id="hamburger" onClick={handleshowSidebar} />
 
           <div className='navlinks'>
 
@@ -45,13 +56,33 @@ export default function Main() {
 
         </header>
 
+        {showSidebar && (
+
+          <div className="sidebar">
+            {/* ... Sidebar content ... */}
+            <p>Connect with Us</p>
+      
+            <Image src='/images/Frame.png' alt='' width='50' height='50' onClick={handleCloseSidebar} style={{cursor: 'pointer'}} />
+
+            <p className='logo'><Image src='/images/facebook.png' alt='' width='30' height='30' /> Facebook</p>
+
+            <p className='logo'><Image src='/images/x.png' alt='' width='30' height='30' /> Twitter</p>
+
+            <p className='logo'><Image src='/images/instagram.png' alt='' width='30' height='30' /> Instagram</p>
+
+            <p className='logo'><Image src='/images/linkedin.png' alt='' width='30' height='30' /> Linkedin</p>
+
+          </div>
+
+        )}
+
         {showForm ? (
 
           <div className='form-container'>
   
             <Image src='/images/Frame.png' alt='' width='30' height='50' id='close' onClick={handleCloseFormClick} />
 
-              <h1>Enter your details to Get Eerly Access</h1>
+            <h1>Enter your details to Get Eerly Access</h1>
 
             <Form />
 
@@ -68,58 +99,20 @@ export default function Main() {
                  <span> embracing</span> complete wholeness!
               </p>
 
+              <div className='mobile-form'>
+
+                <p>Enter your details to Get Eerly Access</p>
+
+                <Form />
+
+              </div>
+
               <button id="button" onClick={handleJoinWaitlistClick}> JOIN WAITLIST </button>
               
             </div>
           </>
 
         )}
-
-     {/* <header>
-          
-          <Link href="/" id="">
-            <Image src='/images/fitstarklogo.png' alt='' width='150' height='50' />
-          </Link>
-
-          <Image src='/images/Frame (2).png' alt='' width='30' height='50' id="hamburger" />
-
-          <div className='navlinks'>
-
-            <div>
-
-              <Image src='/images/facebook.png' alt='' width='30' height='50' />
-              <Image src='/images/x.png' alt='' width='30' height='50' />
-              <Image src='/images/instagram.png' alt='' width='30' height='50' />
-              <Image src='/images/linkedin.png' alt='' width='30' height='50' />
-
-            </div>
-
-            <p>connect with Us</p>
-
-          </div>
-
-      </header>
-
-      <div className="main-content">
-        
-        <h1>Embracing complete wholeness.</h1>
-        <p id="p1">FitStark is launching in 2024!</p>
-        <p id="p2">Be the first to know when we are done cooking your tailored meals and workouts,
-           <span> embracing</span> complete wholeness!
-        </p>
-        <Link href="/waitlist" id="button">JOIN WAITLIST</Link>
-
-      </div>
-
-      <div className='form-container'>
-  
-        <Image src='/images/Frame.png' alt='' width='30' height='50' id='close' />
-
-        <h1>Enter your details to Get Eerly Access</h1>
-
-        <Form />
-              
-      </div> */}
 
     </div>
 
