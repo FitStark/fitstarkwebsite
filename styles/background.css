@@ -14,26 +14,6 @@
     padding-top: 4em;
 }
 
-.navlinks{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-}
-
-.navlinks > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-}
-
-.navlinks > p {
-    margin-top: 10px;
-    font-size: 12px;
-}
-
 .main-content{
     display: flex;
     flex-direction: column;
@@ -48,7 +28,6 @@
 .main-content > h1 {
     font-size: 50px;
     font-weight: bolder;
-    width: 50%;
 }
 
 #p1{
@@ -58,7 +37,6 @@
 
 #p2{
     margin-top: 1em;
-    width: 45%;
 }
 
 #p2 > span {
@@ -76,4 +54,99 @@
     margin-top: 2em;
     font-size: 12px;
     padding: 5px 2em;
+}
+
+.form-container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    padding: 2em;
+    border-radius: 5px;
+}
+
+#close{
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.form-container > h1 {
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+.waitform{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    margin-top: 1em;
+}
+
+input, select{
+    border: 1px solid #adadad;
+}
+
+.waitform > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 1em;
+    padding: 5px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .navlinks{
+        display: none;
+    }
+
+    .main-content > h1 {
+        font-size: 30px;
+        font-weight: bolder;
+        width: 90%;
+    }
+    
+}
+
+@media screen and (min-width: 769px) {
+    
+    #hamburger{
+        display: none;
+    }
+
+    .navlinks{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+    }
+    
+    .navlinks > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+    }
+    
+    .navlinks > p {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    .main-content > h1 {
+        width: 50%;
+    }
+
+    #p2{
+        width: 45%;
+    }
 }
