@@ -149,8 +149,8 @@ input, select{
         background-color: #fff;
         position: absolute;
         z-index: 99999;
-        top: 4em;
-        left: 1em;
+        top: 7em;
+        left: 0em;
         padding: 1em;
         border-radius: 10px;
     }
