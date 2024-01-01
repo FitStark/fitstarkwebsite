@@ -5,6 +5,7 @@ import Image from "next/image";
 export default function Form() {
   const [userType, setUserType] = useState("");
   const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [error, setError] = useState(null);
   const form = useRef(null);
@@ -32,7 +33,7 @@ export default function Form() {
       
           <div className='navlinksa' style={{width: '30%', marginTop: '1em'}}>
       
-            <div>
+            <div className="flex flex-wrap gap-2">
       
               <Image src='/images/X svg.png' alt='' width='30' height='30' />
               <Image src='/images/Facebook svg.png' alt='' width='30' height='30' />
@@ -41,7 +42,7 @@ export default function Form() {
       
             </div>
       
-            <p style={{color: 'black', fontSize: '15px'}}>connect with Us</p>
+            <p className="text-center"style={{color: 'black', fontSize: '15px'}}>connect with Us</p>
       
           </div>
           
@@ -56,10 +57,20 @@ export default function Form() {
       <form ref={form} className="waitform" onSubmit={submit}>
 
         <input
+          type="text"
+          name="fullName"
+          required
+          placeholder="Enter your Full Name"
+          className="p-2 m-2 box-border rounded-lg text-sm flex-1"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+          autoComplete="name"
+        />
+        <input
           type="email"
           name="email"
           required
-          placeholder="Email email address"
+          placeholder="Enter your Email Address"
           className="p-2 m-2 box-border rounded-lg text-sm flex-1"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
