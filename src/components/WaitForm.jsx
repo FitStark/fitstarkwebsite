@@ -61,7 +61,7 @@ export default function Form() {
           name="fullName"
           required
           placeholder="Enter your Full Name"
-          className="p-2 m-2 box-border rounded-lg text-sm flex-1"
+          className="p-2 m-2 box-border rounded-lg text-sm flex-1 text-black"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           autoComplete="name"
@@ -71,7 +71,7 @@ export default function Form() {
           name="email"
           required
           placeholder="Enter your Email Address"
-          className="p-2 m-2 box-border rounded-lg text-sm flex-1"
+          className="p-2 m-2 box-border rounded-lg text-sm flex-1 text-black"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           autoComplete="email"
