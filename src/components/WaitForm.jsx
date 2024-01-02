@@ -81,11 +81,11 @@ export default function Form() {
 
         <button
           type="submit"
-          className="box-border border-none rounded-lg text-md bg-[#95BF1D] hover:bg-[#6e862a] text-white"
+          className="box-border border-none rounded-lg text-md bg-[#95BF1D] hover:bg-[#6e862a] text-white p-10"
         >
           JOIN WAITLIST
         </button>
       </form>
     </>
   );
-}
+  }

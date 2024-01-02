@@ -1,242 +1,259 @@
-.background{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/bg.jpg');
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
+.background {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/bg.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
 }
 
-.background > header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    margin: auto;
-    padding-top: 4em;
-}
-
-.main-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 90%;
-    margin: auto;
-    margin-top: 3em;
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  margin-top: 3em;
 }
 
 .main-content > h1 {
-    font-size: 50px;
-    font-weight: bolder;
+  font-size: 50px;
+  font-weight: bolder;
 }
 
-#p1{
-    color: #95bf1d;
-    margin-top: 1em;
+#p1 {
+  color: #95bf1d;
 }
 
-#p2{
-    margin-top: 1em;
+#p2 {
+  margin-top: 1em;
 }
 
 #p2 > span {
-    color: #95bf1d;
+  color: #95bf1d;
 }
 
 #button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #95bf1d;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    margin-top: 2em;
-    font-size: 12px;
-    padding: 5px 2em;
+  background-color: #95bf1d;
+  border-radius: 10px;
+  border: none;
+  outline: none;
 }
 
 .form-container {
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin: auto;
-    padding: 2em;
-    border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  padding: 2em;
+  border-radius: 5px;
 }
 
-#close{
-    align-self: flex-end;
-    cursor: pointer;
+#close {
+  align-self: flex-end;
+  cursor: pointer;
 }
 
 .form-container > h1 {
-    color: black;
-    font-size: 25px;
-    font-weight: 600;
-    text-align: center;
-    width: 50%;
-    margin: auto;
+  color: black;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  width: 50%;
+  margin: auto;
 }
 
-.waitform{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin: auto;
-    margin-top: 1em;
+.waitform {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+  margin-top: 1em;
 }
 
-input, select{
-    border: 1px solid #adadad;
+input,
+select {
+  border: 1px solid #adadad;
 }
 
 .waitform > button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    margin: auto;
-    margin-top: 1em;
-    padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  margin-top: 1em;
+  padding: 5px;
 }
 
-.form-submit{
-    display: flex;
-    flex-direction: column;
-    color: black;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 20px;
+.form-submit {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 768px) {
+  .navlinks {
+    display: none;
+  }
 
-    .navlinks{
-        display: none;
-    }
+  .main-content > h1 {
+    font-size: 30px;
+    font-weight: bolder;
+    width: 90%;
+  }
 
-    .main-content > h1 {
-        font-size: 30px;
-        font-weight: bolder;
-        width: 90%;
-    }
+  .form-container {
+    width: 90%;
+  }
 
-    .form-container{
-        width: 90%;
-    }
+  #button {
+    display: none;
+  }
 
-    #button{
-        display: none;
-    }
+  .mobile-form {
+    margin-top: 1em;
+  }
 
-    .mobile-form{
-        margin-top: 1em;
-    }
+  .mobile-form > p {
+    font-size: 12px;
+  }
 
-    .mobile-form > p{
-        font-size: 12px;
-    }
+  .waitform {
+    width: 100%;
+    margin-top: -8px;
+  }
 
-    .waitform{
-        width: 100%;
-        margin-top: -8px;
-    }
+  .form-submit {
+    background-color: #fff;
+    position: absolute;
+    z-index: 99999;
+    top: 7em;
+    left: 0em;
+    padding: 1em;
+    border-radius: 10px;
+  }
 
-    .form-submit{
-        background-color: #fff;
-        position: absolute;
-        z-index: 99999;
-        top: 7em;
-        left: 0em;
-        padding: 1em;
-        border-radius: 10px;
-    }
+  .navlinksa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+  }
 
-    .navlinksa{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 20%;
-    }
-    
-    .navlinksa > div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 80%;
-    }
-    
-    .navlinksa > p {
-        margin-top: 10px;
-        font-size: 12px;
-    }
+  .navlinksa > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+  }
 
-    #hamburger{
-        cursor: pointer;
-    }
+  .navlinksa > p {
+    margin-top: 10px;
+    font-size: 12px;
+  }
 
-    .sidebar{
-        background-color: black;
-        color: #fff;
-        position: absolute;
-        z-index: 99999;
-        padding: 1em;
-        padding-top: 2em;
-        width: 70%;
-        height: 100vh;
-        top: 0em;
-    }
+  #hamburger {
+    cursor: pointer;
+  }
 
-    .logo{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: left;
-        width: 50%;
-        margin-top: 1em;
-    }
-    
+  .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 50%;
+    margin-top: 1em;
+  }
 }
 
 @media screen and (min-width: 769px) {
-    
-    #hamburger{
-        display: none;
-    }
+  #hamburger {
+    display: none;
+  }
 
-    .navlinks{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 20%;
-    }
-    
-    .navlinks > div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 80%;
-    }
-    
-    .navlinks > p {
-        margin-top: 10px;
-        font-size: 12px;
-    }
+  .navlinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+  }
 
-    .main-content > h1 {
-        width: 50%;
-    }
+  .navlinks > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+  }
 
-    #p2{
-        width: 45%;
-    }
+  .navlinks > p {
+    margin-top: 10px;
+    font-size: 12px;
+  }
 
-    .mobile-form{
-        display: none;
-    }
+  .main-content > h1 {
+    width: 50%;
+  }
+
+  #p2 {
+    width: 45%;
+  }
+
+  .mobile-form {
+    display: none;
+  }
+}
+
+/* Hamburger button */
+.hamburger svg > *:nth-child(1),
+.hamburger svg > *:nth-child(2),
+.hamburger svg > *:nth-child(3) {
+  transform-origin: center;
+  transform: rotate(0deg);
+}
+
+.hamburger svg > *:nth-child(1) {
+  transition: y 0.1s 0.25s ease-in,
+    transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity 0.1s ease-in;
+}
+
+.hamburger svg > *:nth-child(2) {
+  transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger svg > *:nth-child(3) {
+  transition: y 0.1s 0.25s ease-in,
+    transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19),
+    width 0.1s 0.25s ease-in;
+}
+
+.hamburger.active svg > *:nth-child(1) {
+  opacity: 0;
+  y: 11;
+  transform: rotate(225deg);
+  transition: y 0.1s ease-out,
+    transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1),
+    opacity 0.1s 0.12s ease-out;
+}
+
+.hamburger.active svg > *:nth-child(2) {
+  transform: rotate(225deg);
+  transition: transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger.active svg > *:nth-child(3) {
+  y: 11;
+  transform: rotate(135deg);
+  transition: y 0.1s ease-out,
+    transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1),
+    width 0.1s ease-out;
 }

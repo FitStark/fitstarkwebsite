@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -14,7 +15,7 @@ export default function Footer() {
               <div className="mb-2">
                 {/* Logo */}
                 <Link href="/" className="w-20 h-20" aria-label="Imamic">
-                  <img className="w-28 h-28" src="../../images/logo.png"></img>
+                  <Image width={28} height={28} className="w-28 h-28" src="/../../images/FS LOGO.png" alt="logo" />
                 </Link>
               </div>
             </div>

@@ -1,61 +1,66 @@
 import Link from "next/link";
 import MobileMenu from "./mobile-menu";
+import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
+import { RiTwitterXLine } from "react-icons/ri";
+import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="absolute w-full z-30">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <header className="bg-transparent fixed z-10 w-full sm:hidden md:hidden">
+      <div className=" mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Site branding */}
           <div className="shrink-0 mr-4">
             {/* Logo */}
-            <Link href="/" className="w-20 h-20" aria-label="Cruip">
-              <img className="w-28 h-28" src="../../images/logo.png"></img>
+            <Link href="/" aria-label="Cruip">
+              <Image
+                width={80}
+                height={80}
+                src="/../../images/fitstarklogo.png"
+                alt="logo"
+              />
             </Link>
           </div>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex md:grow">
-            {/* Desktop sign in links */}
-            <ul className="flex grow justify-end flex-wrap items-center">
+          <nav>
+            <ul className="flex gap-4">
               <li>
                 <Link
-                  href="/"
-                  className="font-medium text-purple-600 hover:text-gray-200 px-4 py-6 flex items-center transition duration-150 ease-in-out"
+                  href="https://www.facebook.com/fitstarkapp"
+                  target="_blank"
                 >
-                  Home
+                  <p className="logo">
+                    <FaFacebook />
+                  </p>
+                </Link>
+              </li>
+              <li>
+                <Link href="https://www.x.com/fitstarkapp" target="_blank">
+                  <p className="logo">
+                    <RiTwitterXLine />
+                  </p>
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/about"
-                  className="font-medium text-purple-600 hover:text-gray-200 px-4 py-6 flex items-center transition duration-150 ease-in-out"
+                  href="https://www.instagram.com/fitstarkapp"
+                  target="_blank"
                 >
-                  About
+                  <p className="logo">
+                    {" "}
+                    <FaInstagram />
+                  </p>
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/employers"
-                  className="font-medium text-purple-600 hover:text-gray-200 px-4 py-6 flex items-center transition duration-150 ease-in-out"
+                  href="https://www.linkedin.com/company/fitstarkapp"
+                  target="_blank"
                 >
-                  Employers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/jobseekers"
-                  className="font-medium text-purple-600 hover:text-gray-200 px-4 py-6 flex items-center transition duration-150 ease-in-out"
-                >
-                  Job Seekers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="font-medium text-purple-600 hover:text-gray-200 px-4 py-6 flex items-center transition duration-150 ease-in-out"
-                >
-                  Contact
+                  <p className="logo">
+                    <FaLinkedinIn />
+                  </p>
                 </Link>
               </li>
             </ul>

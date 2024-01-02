@@ -1,41 +1,47 @@
-'use client'
+"use client";
 
-import { useState, useRef, useEffect } from 'react'
-import Link from 'next/link'
+import { useRef, useEffect, useState } from "react";
+import Link from "next/link";
+import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa6";
+import { RiTwitterXLine } from "react-icons/ri";
 
 export default function MobileMenu() {
-  const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false)
-
-  const trigger = useRef<HTMLButtonElement>(null)
-  const mobileNav = useRef<HTMLDivElement>(null)
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const trigger = useRef(null);
+  const mobileNav = useRef(null);
 
   // close the mobile menu on click outside
   useEffect(() => {
     const clickHandler = ({ target }) => {
       if (!mobileNav.current || !trigger.current) return;
-      if (!mobileNavOpen || mobileNav.current.contains(target) || trigger.current.contains(target)) return;
-      setMobileNavOpen(false)
+      if (
+        !mobileNavOpen ||
+        mobileNav.current.contains(target) ||
+        trigger.current.contains(target)
+      )
+        return;
+      setMobileNavOpen(false);
     };
-    document.addEventListener('click', clickHandler)
-    return () => document.removeEventListener('click', clickHandler)
-  })
+    document.addEventListener("click", clickHandler);
+    return () => document.removeEventListener("click", clickHandler);
+  });
 
   // close the mobile menu if the esc key is pressed
   useEffect(() => {
-    const keyHandler = ({ keyCode })=> {
+    const keyHandler = ({ keyCode }) => {
       if (!mobileNavOpen || keyCode !== 27) return;
-      setMobileNavOpen(false)
+      setMobileNavOpen(false);
     };
-    document.addEventListener('keydown', keyHandler)
-    return () => document.removeEventListener('keydown', keyHandler)
-  })
+    document.addEventListener("keydown", keyHandler);
+    return () => document.removeEventListener("keydown", keyHandler);
+  });
 
   return (
     <div className="md:hidden">
       {/* Hamburger button */}
       <button
         ref={trigger}
-        className={`hamburger ${mobileNavOpen && 'active'}`}
+        className={`hamburger ${mobileNavOpen && "active"}`}
         aria-controls="mobile-nav"
         aria-expanded={mobileNavOpen}
         onClick={() => setMobileNavOpen(!mobileNavOpen)}
@@ -57,44 +63,49 @@ export default function MobileMenu() {
         id="mobile-nav"
         ref={mobileNav}
         className="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out"
-        style={mobileNavOpen ? { maxHeight: mobileNav.current?.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: 0.8 }}
+        style={
+          mobileNavOpen
+            ? { maxHeight: mobileNav.current?.scrollHeight, opacity: 1 }
+            : { maxHeight: 0, opacity: 0.8 }
+        }
       >
-        <ul className="bg-gray-800 px-4 py-2">
-        <li>
-            <Link href="/" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>
-              Home
+        <ul className="bg-gray-800 px-4 py-2 justify-center mx-10">
+          <li>
+            <Link href="https://www.facebook.com/fitstarkapp" target="_blank">
+              <p className="logo">
+                <FaFacebook /> Facebook
+              </p>
             </Link>
           </li>
           <li>
-            <Link href="/about" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>
-              About
+            <Link href="https://www.x.com/fitstarkapp" target="_blank">
+              <p className="logo">
+                <RiTwitterXLine />X
+              </p>
             </Link>
           </li>
           <li>
-            <Link href="/employers" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>
-              Employers
-            </Link>
-          </li>
-          <li>
-            <Link href="/jobseekers" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>
-              Job Seekers
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>
-              Contact
+            <Link href="https://www.instagram.com/fitstarkapp" target="_blank">
+              <p className="logo">
+                {" "}
+                <FaInstagram />
+                Instagram
+              </p>
             </Link>
           </li>
           <li>
             <Link
-              href="/signup"
-              className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out" onClick={() => setMobileNavOpen(false)}
+              href="https://www.linkedin.com/company/fitstarkapp"
+              target="_blank"
             >
-              Sign up
+              <p className="logo">
+                <FaLinkedinIn />
+                Linkedin
+              </p>
             </Link>
           </li>
         </ul>
       </nav>
     </div>
-  )
+  );
 }
