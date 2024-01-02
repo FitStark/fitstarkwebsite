@@ -23,8 +23,8 @@ export default function Header() {
           </div>
 
           {/* Desktop navigation */}
-          <nav className="sm:hidden">
-            <ul className="flex gap-4 sm:hidden">
+          <nav className="hidden md:flex">
+            <ul className="flex gap-4">
               <li>
                 <Link
                   href="https://www.facebook.com/fitstarkapp"
@@ -65,7 +65,9 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-          <MobileMenu />
+          <div className="sm:hidden">
+            <MobileMenu />
+          </div>
         </div>
       </div>
     </header>
