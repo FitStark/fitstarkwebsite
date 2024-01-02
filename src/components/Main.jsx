@@ -37,14 +37,13 @@ export default function Main() {
       ) : (
         <>
           <div className="main-content" onClick={() => setShowSidebar(false)}>
-            <h1>Embracing complete wholeness.</h1>
+            <h1>Embracing Complete Wholeness.</h1>
             <p id="p1" className="text-xl my-6">
               FitStark is launching in 2024!
             </p>
             <p className="text-lg" id="p2">
-              Be the first to know when we are done cooking your tailored meals
-              and workouts,
-              <span> embracing</span> complete wholeness!
+              Want to be the first to know?
+              <span> Embrace</span> Complete Wholeness!
             </p>
 
             <div className="mobile-form">

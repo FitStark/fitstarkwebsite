@@ -23,8 +23,8 @@ export default function Header() {
           </div>
 
           {/* Desktop navigation */}
-          <nav>
-            <ul className="flex gap-4">
+          <nav className="sm:hidden">
+            <ul className="flex gap-4 sm:hidden">
               <li>
                 <Link
                   href="https://www.facebook.com/fitstarkapp"
