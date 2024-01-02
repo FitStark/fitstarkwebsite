@@ -67,6 +67,7 @@ export default function Form() {
   return (
     <>
       <form ref={form} className="waitform" onSubmit={submit}>
+      {/* <Image /> */}
         <iframe
           class="airtable-embed"
           src="https://airtable.com/embed/apppGAZzFpZRpbS9T/pagqJcttqPaZe4vpY/form"
@@ -79,12 +80,6 @@ export default function Form() {
 
         {error ? <div className="text-red-500">{error}</div> : null}
 
-        <button
-          type="submit"
-          className="box-border border-none rounded-lg text-md bg-[#95BF1D] hover:bg-[#6e862a] text-white p-10"
-        >
-          JOIN WAITLIST
-        </button>
       </form>
     </>
   );

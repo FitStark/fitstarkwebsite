@@ -36,13 +36,13 @@ export default function Main() {
         </div>
       ) : (
         <>
-          <div className="main-content" onClick={() => setShowSidebar(false)}>
+          <div className="main-content pt-20">
             <h1>Embrace Complete Wholeness.</h1>
             <p id="p1" className="text-xl my-6">
               FitStark is launching in 2024!
             </p>
             <p className="text-lg" id="p2">
-              Want to be the first to know?
+              Want to be the first to know when everything is all set?
             </p>
 
             <div className="mobile-form">
