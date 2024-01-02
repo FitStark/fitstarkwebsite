@@ -56,7 +56,7 @@ export default function Form() {
               className="text-center"
               style={{ color: "black", fontSize: "15px" }}
             >
-              connect with Us
+              Connect with Us
             </p>
           </div>
         </div>
@@ -76,26 +76,6 @@ export default function Form() {
           height="533"
           style={{background: "transparent"}}
         ></iframe>
-
-        <select
-          name="userType"
-          required
-          className="p-2 m-2 box-border rounded-lg text-sm flex-1"
-          value={userType}
-          onChange={(e) => setUserType(e.target.value)}
-          autoComplete="userType"
-          style={{ color: "black" }}
-        >
-          <option value="fitstar" style={{ color: "black" }} disabled>
-            User type
-          </option>
-          <option value="fitstar" style={{ color: "black" }}>
-            FitStar
-          </option>
-          <option value="fitguide" style={{ color: "black" }}>
-            FitGuide
-          </option>
-        </select>
 
         {error ? <div className="text-red-500">{error}</div> : null}
 
