@@ -18,7 +18,7 @@ const Background = () => {
                 <Image src='/images/linkedin.png' alt='' width='30' height='50' />
               </div>
 
-              <p>connect with Us</p>
+              <p>Connect with Us</p>
 
             </div>
         </header>
