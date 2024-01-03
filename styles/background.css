@@ -114,10 +114,6 @@ select {
     width: 90%;
   }
 
-  #button {
-    display: none;
-  }
-
   .mobile-form {
     margin-top: 1em;
   }

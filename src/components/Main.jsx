@@ -4,10 +4,8 @@ import Image from "next/image";
 import Form from "./WaitForm";
 import "../../styles/background.css";
 
-
 export default function Main() {
   const [showForm, setShowForm] = useState(false);
-
 
   const handleJoinWaitlistClick = () => {
     setShowForm(true);
@@ -16,7 +14,6 @@ export default function Main() {
   const handleCloseFormClick = () => {
     setShowForm(false);
   };
-
 
   return (
     <div className="background">
@@ -30,36 +27,30 @@ export default function Main() {
             id="close"
             onClick={handleCloseFormClick}
           />
-          <h1 className="my-5 sm:pt-10">Enter your details to Get Early Access</h1>
-
+          <h1 className="my-5 sm:pt-10">
+            Enter your details to Get Early Access
+          </h1>
           <Form />
         </div>
       ) : (
-        <>
-          <div className="main-content pt-20">
-            <h1>Embrace Complete Wholeness.</h1>
-            <p id="p1" className="text-xl my-6">
-              FitStark is launching in 2024!
-            </p>
-            <p className="text-lg" id="p2">
-              Want to be the first to know when everything is all set?
-            </p>
+        <div className="main-content pt-20">
+          <h1>Embrace Complete Wholeness.</h1>
+          <p id="p1" className="text-xl my-6">
+            FitStark is launching in 2024!
+          </p>
+          <p className="text-lg" id="p2">
+            Want to be the first to know when everything is all set?
+          </p>
 
-            <div className="mobile-form">
-              <p className="pb-16">Enter your details to Get Early Access</p>
-              <Form />
-            </div>
-
-            <button
-              id="button"
-              className="p-4 mt-10"
-              onClick={handleJoinWaitlistClick}
-            >
-              {" "}
-              JOIN WAITLIST{" "}
-            </button>
-          </div>
-        </>
+          <button
+            id="button"
+            className="p-4 mt-10"
+            onClick={handleJoinWaitlistClick}
+          >
+            {" "}
+            JOIN WAITLIST{" "}
+          </button>
+        </div>
       )}
     </div>
   );
