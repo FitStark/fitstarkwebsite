@@ -16,7 +16,7 @@ export default function Header() {
               <Image
                 width={80}
                 height={80}
-                src="/../../images/fitstarklogo.png"
+                src="/images/fitstarklogo.png"
                 alt="logo"
               />
             </Link>
