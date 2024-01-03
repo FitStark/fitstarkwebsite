@@ -72,6 +72,7 @@ export default function MobileMenu() {
         }
       >
         <ul className="bg-gray-800 px-4 py-2 justify-center">
+        <li className="text-lg py-4 flex items-center justify-center">Connect with Us</li>
           <li>
             <Link href="https://www.facebook.com/fitstarkapp" target="_blank">
               <p className="logo">
