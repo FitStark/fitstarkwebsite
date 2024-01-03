@@ -62,14 +62,16 @@ export default function MobileMenu() {
       <nav
         id="mobile-nav"
         ref={mobileNav}
-        className="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out"
+        className={`absolute top-0 left-0 z-20 w-2/3 h-full bg-gray-800 transform ${
+          mobileNavOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 ease-in-out`}
         style={
           mobileNavOpen
             ? { maxHeight: mobileNav.current?.scrollHeight, opacity: 1 }
             : { maxHeight: 0, opacity: 0.8 }
         }
       >
-        <ul className="bg-gray-800 px-4 py-2 justify-center mx-10">
+        <ul className="bg-gray-800 px-4 py-2 justify-center">
           <li>
             <Link href="https://www.facebook.com/fitstarkapp" target="_blank">
               <p className="logo">
@@ -80,7 +82,7 @@ export default function MobileMenu() {
           <li>
             <Link href="https://www.x.com/fitstarkapp" target="_blank">
               <p className="logo">
-                <RiTwitterXLine />X
+                <RiTwitterXLine /> X
               </p>
             </Link>
           </li>
