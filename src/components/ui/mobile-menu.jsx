@@ -62,32 +62,32 @@ export default function MobileMenu() {
       <nav
         id="mobile-nav"
         ref={mobileNav}
-        className={`absolute top-0 left-0 z-20 w-2/3 h-full bg-gray-800 transform ${
+        className={`absolute top-0 left-0 z-20 w-2/3 h-full bg-gray-700 bg-opacity-80 transform ${
           mobileNavOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out`}
+        } transition-transform duration-300 ease-in-out min-h-screen`}
         style={
           mobileNavOpen
             ? { maxHeight: mobileNav.current?.scrollHeight, opacity: 1 }
             : { maxHeight: 0, opacity: 0.8 }
         }
       >
-        <ul className="bg-gray-800 px-4 py-2 justify-center">
-        <li className="text-lg py-4 flex items-center justify-center">Connect with Us</li>
-          <li>
+        <ul className="px-4 py-2 justify-center text-white">
+          <li className="text-lg py-4 flex justify-center">Connect with Us</li>
+          <li className="hover:animate-bounce hover:text-black hover:text-lg">
             <Link href="https://www.facebook.com/fitstarkapp" target="_blank">
               <p className="logo">
                 <FaFacebook /> Facebook
               </p>
             </Link>
           </li>
-          <li>
+          <li className="hover:animate-bounce hover:text-black hover:text-lg">
             <Link href="https://www.x.com/fitstarkapp" target="_blank">
               <p className="logo">
                 <RiTwitterXLine /> X
               </p>
             </Link>
           </li>
-          <li>
+          <li className="hover:animate-bounce hover:text-black hover:text-lg">
             <Link href="https://www.instagram.com/fitstarkapp" target="_blank">
               <p className="logo">
                 {" "}
@@ -96,7 +96,7 @@ export default function MobileMenu() {
               </p>
             </Link>
           </li>
-          <li>
+          <li className="hover:animate-bounce hover:text-black hover:text-lg">
             <Link
               href="https://www.linkedin.com/company/fitstarkapp"
               target="_blank"

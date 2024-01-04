@@ -22,7 +22,7 @@ export default function Form() {
 
   if (hasSubmitted) {
     return (
-      <div className="p-8">
+      <div className="p-8 mt-5">
         <div className="form-submit">
           <Image src="/images/Frame (1).png" alt="" width="50" height="50" />
           <p>Your interest has been successfully received!</p>
@@ -66,7 +66,7 @@ export default function Form() {
 
   return (
     <>
-      <form ref={form} className="waitform" onSubmit={submit}>
+      <form ref={form} className="waitform mt-5" onSubmit={submit}>
       {/* <Image /> */}
         <iframe
           class="airtable-embed"
