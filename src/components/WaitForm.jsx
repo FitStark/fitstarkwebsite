@@ -110,7 +110,7 @@ export default function Form() {
                         name="email"
                         type="email"
                         required
-                        placeholder="Email"
+                        placeholder="johndoe@gmail.com"
                         className={inputClassName}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
