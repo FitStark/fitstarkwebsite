@@ -1,22 +1,23 @@
 import Airtable from "airtable";
-import { NextResponse } from "next/server";
+import {NextResponse} from "next/server";
 
-export async function POST(req) {
-  const { name, email } = await req.formData();
-  try {
-    const base = new Airtable({
-      apiKey: process.env.AIRTABLE_API_KEY,
-    }).base(process.env.AIRTABLE_BASE_ID);
+export async function POST(request) {
+    const {fullName, email, userType} = await request.json();
 
-    const records = await base(process.env.AIRTABLE_TABLE_NAME).create([
-      { fields: { Name: name, Email: email } },
-    ]);
+    try {
+        const base = new Airtable({
+            apiKey: process.env.AIRTABLE_API_KEY,
+        }).base(process.env.AIRTABLE_BASE_ID);
 
-    console.log(records);
-  } catch (error) {
-    console.log(error);
-  }
-  return NextResponse.json({ ok: true }, { status: 200 });
+        const records = await base(process.env.AIRTABLE_TABLE_NAME).create([
+            {fields: {Name: fullName, Email: email}},
+        ]);
+
+    } catch (error) {
+        console.error(error);
+    }
+
+    return NextResponse.json({ok: true}, {status: 200});
 }
 
 /* export async function POST(req) {
