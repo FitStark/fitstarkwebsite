@@ -7,7 +7,8 @@ export default function Form() {
     const [email, setEmail] = useState("");
     const [fullName, setFullName] = useState("");
     const [hasSubmitted, setHasSubmitted] = useState(false);
-    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState();
     const form = useRef();
 
     const submit = async (e) => {
@@ -17,19 +18,25 @@ export default function Form() {
             return
         }
 
-        const response = await fetch("/api/waitlist", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                email,
-                fullName,
-                userType,
-            }),
-        });
-
-        setHasSubmitted(true);
+        try {
+            setLoading(true);
+            await fetch("/api/waitlist", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    email,
+                    fullName,
+                    userType,
+                }),
+            });
+            setHasSubmitted(true);
+        } catch (e) {
+            setError(e.message)
+        } finally {
+            setLoading(false);
+        }
     };
 
     if (hasSubmitted) {
@@ -76,51 +83,65 @@ export default function Form() {
         );
     }
 
-    const inputStyle = "p-3 box-border border-none rounded-lg text-lg flex-1 bg-[#232323] text-white mr-2"
-    const selectStyle = {color: "black"}
+    const formSectionClassName = "flex flex-col"
+    const labelClassName = "text-caption text-neutral-900 font-semibold"
+    const inputClassName =
+        "py-2 px-3 border border-solid border-neutral-40 rounded-md text-body text-neutral-900 bg-neutral-10 placeholder-neutral-70";
 
     return (
         <>
-            <form ref={form} className="waitform mt-5" onSubmit={submit}>
-                <input
-                    type="name"
-                    required
-                    placeholder="Full Name"
-                    className={inputStyle}
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                />
+            <form ref={form} className="waitform flex flex-col gap-4 my-4 w-full" onSubmit={submit}>
+                <div className={formSectionClassName}>
+                    <label htmlFor="name" className={labelClassName}>Full Name</label>
+                    <input
+                        name="name"
+                        type="name"
+                        required
+                        placeholder="John Doe"
+                        className={inputClassName}
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                    />
+                </div>
 
-                <input
-                    type="email"
-                    required
-                    placeholder="Email"
-                    className={inputStyle}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
+                <div className={formSectionClassName}>
+                    <label htmlFor="email" className={labelClassName}>Email</label>
+                    <input
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="Email"
+                        className={inputClassName}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
 
-                <select
-                    name="userType"
-                    required
-                    className="p-2 m-2 box-border rounded-lg text-sm flex-1"
-                    value={userType}
-                    onChange={(e) => setUserType(e.target.value)}
-                    autoComplete="userType"
-                    style={selectStyle}
-                >
-                    <option value="fitstar" style={selectStyle} disabled>User type</option>
-                    <option value="fitstar" style={selectStyle}>FitStar</option>
-                    <option value="fitguide" style={selectStyle}>FitGuide</option>
-                </select>
+                <div className={formSectionClassName}>
+                    <label htmlFor="userType" className={labelClassName}>Role</label>
+                    <select
+                        name="userType"
+                        required
+                        className={inputClassName}
+                        value={userType}
+                        onChange={(e) => setUserType(e.target.value)}
+                        autoComplete="userType"
+                    >
+                        <option value="fitstar" disabled>User type</option>
+                        <option value="fitstar">FitStar</option>
+                        <option value="fitguide">FitGuide</option>
+                    </select>
+                </div>
+
 
                 {error ? <div className="text-red-500">{error}</div> : null}
 
                 <button
                     type="submit"
                     className="box-border border-none rounded-lg text-md bg-[#95BF1D] hover:bg-[#6e862a] text-white p-10"
+                    disabled={loading}
                 >
-                    JOIN WAITLIST
+                    {loading ? "Submitting..." : "JOIN WAITLIST"}
                 </button>
             </form>
         </>
