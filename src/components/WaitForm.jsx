@@ -24,10 +24,13 @@ export default function Form() {
     return (
       <div className="p-8 mt-5">
         <div className="form-submit">
-          <Image src="/images/Frame (1).png" alt="" width="50" height="50" />
+          <Image src="/images/Frame1.png" alt="" width="50" height="50" />
           <p>Your interest has been successfully received!</p>
           <p>You will be notified duly!</p>
           <p>Anticipate our launch in 2024!</p>
+          <a href='https://chat.whatsapp.com/FqcHR5ULVx3Kpfc8NagmPJ' className="text-black cursor-pointer">
+            Click here to join our community
+          </a>
 
           <div className="navlinksa" style={{ width: "30%", marginTop: "1em" }}>
             <div className="flex flex-wrap gap-2">
